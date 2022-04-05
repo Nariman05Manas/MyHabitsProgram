@@ -9,74 +9,63 @@ import UIKit
 
 
 class InfoViewController: UIViewController {
-    
-    lazy var tableView: UITableView = {
-        let table = UITableView(frame: .zero, style: .grouped )
-        table.toAutoLayout()
-        table.refreshControl = UIRefreshControl()
-        table.backgroundColor = .white
-        table.isScrollEnabled = true
-        table.separatorInset = .zero
-        table.rowHeight = UITableView.automaticDimension
-        table.refreshControl?.addTarget(self, action: #selector(updateTable), for: .valueChanged)
-        return table
-    }()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+            
+        let scrollView: UIScrollView = {
+            let scrollView = UIScrollView()
+            scrollView.toAutoLayout()
+            scrollView.backgroundColor = .white
+            scrollView.isScrollEnabled = true
+            scrollView.indicatorStyle = .black
+            return scrollView
+        }()
         
-        title = "Информация"
+        let titleLabel: UILabel = {
+            let titleLabel = UILabel()
+            titleLabel.toAutoLayout()
+            titleLabel.text = "Привычка за 21 день"
+            titleLabel.contentMode = .scaleAspectFit
+            titleLabel.font = .systemFont(ofSize: 20, weight: .semibold)
+            return titleLabel
+        }()
         
-        view.addSubview(tableView)
+        let textView: UITextView = {
+            let textView = UITextView()
+            textView.toAutoLayout()
+            textView.isScrollEnabled = false
+            textView.text = textInfo
+            textView.font = .systemFont(ofSize: 17)
+            return textView
+        }()
         
-        view.backgroundColor = .white
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            
+            view.addSubview(scrollView)
+            scrollView.contentSize = CGSize(width: view.frame.width, height: view.frame.height)
+            scrollView.addSubviews(titleLabel, textView)
+            
+            initialLayout()
+            
+        }
         
-        tableView.dataSource = self
-        tableView.delegate = self
+        //MARK: Initial Layout
+        func initialLayout() {
+            NSLayoutConstraint.activate([scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+                                         scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+                                         scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+                                         scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+                                         
+                                         titleLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 22),
+                                         titleLabel.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 16),
+                                         titleLabel.widthAnchor.constraint(equalToConstant: 218),
+                                         titleLabel.heightAnchor.constraint(equalToConstant: 24),
+                                         
+                                         textView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 62),
+                                         textView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 16),
+                                         textView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: -16),
+                                        ])
+        }
         
-        tableView.register(InfoViewHeader.self, forHeaderFooterViewReuseIdentifier: InfoViewHeader.identifire)
-        tableView.register(InfoViewCell.self, forCellReuseIdentifier: InfoViewCell.identifire)
-        
-        NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
-        ])
-        
-    }
-    
-    @objc func updateTable() {
-        tableView.reloadData()
-        tableView.refreshControl?.endRefreshing()
-    }
-    
-}
+ 
 
-extension InfoViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: InfoViewCell.identifire, for: indexPath) as? InfoViewCell else { return UITableViewCell() }
-        cell.setup(text: textInfo[indexPath.row])
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        textInfo.count
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: InfoViewHeader.identifire) as? InfoViewHeader else { return nil }
-        return headerView
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 48
-        
-    }
-    
 }

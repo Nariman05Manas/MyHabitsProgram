@@ -9,7 +9,7 @@ import UIKit
 
 class HabitCollectionViewHeader: UICollectionReusableView {
     
-    static let identifire = "HabitCollectionViewHeader"
+    static let identifier = "HabitCollectionViewHeader"
     
     lazy var label: UILabel = {
         let label = UILabel()

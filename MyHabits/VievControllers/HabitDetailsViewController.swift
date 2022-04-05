@@ -16,7 +16,7 @@ class HabitDetailsViewController: UIViewController {
          table.isScrollEnabled = true
          table.separatorInset = .zero
          table.rowHeight = UITableView.automaticDimension
-         table.refreshControl?.addTarget(self, action: #selector(updateTable), for: .valueChanged)
+         table.refreshControl?.addTarget(HabitDetailsViewController.self, action: #selector(updateTable), for: .valueChanged)
          return table
      }()
      
@@ -57,9 +57,9 @@ class HabitDetailsViewController: UIViewController {
          HabitDetailsViewController.tableView.delegate = self
          
          HabitDetailsViewController.tableView.register(HabitDetailTableViewHeader.self,
-                                                       forHeaderFooterViewReuseIdentifier: HabitDetailTableViewHeader.identifire)
+                                                       forHeaderFooterViewReuseIdentifier: HabitDetailTableViewHeader.identifier)
          HabitDetailsViewController.tableView.register(HabitDetailTableViewCell.self,
-                                                       forCellReuseIdentifier: HabitDetailTableViewCell.identifire)
+                                                       forCellReuseIdentifier: HabitDetailTableViewCell.identifier)
          
          view.addSubview(HabitDetailsViewController.tableView)
          
@@ -99,7 +99,7 @@ class HabitDetailsViewController: UIViewController {
  extension HabitDetailsViewController: UITableViewDelegate, UITableViewDataSource {
      
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-         guard let cell = tableView.dequeueReusableCell(withIdentifier: HabitDetailTableViewCell.identifire, for: indexPath) as? HabitDetailTableViewCell else { return UITableViewCell() }
+         guard let cell = tableView.dequeueReusableCell(withIdentifier: HabitDetailTableViewCell.identifier, for: indexPath) as? HabitDetailTableViewCell else { return UITableViewCell() }
          let date = HabitsStore.shared.dates[indexPath.row]
          cell.setup(date: date, check: HabitsStore.shared.habit(habit, isTrackedIn: date))
          
@@ -115,7 +115,7 @@ class HabitDetailsViewController: UIViewController {
      }
      
      func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-         guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: HabitDetailTableViewHeader.identifire) as? HabitDetailTableViewHeader else { return nil }
+         guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: HabitDetailTableViewHeader.identifier) as? HabitDetailTableViewHeader else { return nil }
          return headerView
      }
      

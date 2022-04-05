@@ -14,11 +14,7 @@
 		4BA5BC0827F341670001BE22 /* HabitDetailTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA5BC0727F341670001BE22 /* HabitDetailTableViewHeader.swift */; };
 		4BA5BC0A27F3418D0001BE22 /* HabitDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA5BC0927F3418D0001BE22 /* HabitDetailTableViewCell.swift */; };
 		4BA5BC0C27F341B30001BE22 /* HabitDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA5BC0B27F341B30001BE22 /* HabitDetailsViewController.swift */; };
-		4BA5BC1127F347630001BE22 /* InfoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA5BC1027F347630001BE22 /* InfoViewCell.swift */; };
-		4BA5BC1327F3479C0001BE22 /* InfoViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA5BC1227F3479C0001BE22 /* InfoViewHeader.swift */; };
 		4BF7A46727F0B5D200E03A68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF7A46627F0B5D200E03A68 /* AppDelegate.swift */; };
-		4BF7A46927F0B5D200E03A68 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF7A46827F0B5D200E03A68 /* SceneDelegate.swift */; };
-		4BF7A46B27F0B5D200E03A68 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF7A46A27F0B5D200E03A68 /* ViewController.swift */; };
 		4BF7A47027F0B5D300E03A68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BF7A46F27F0B5D300E03A68 /* Assets.xcassets */; };
 		4BF7A47327F0B5D300E03A68 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BF7A47127F0B5D300E03A68 /* LaunchScreen.storyboard */; };
 		4BF7A49E27F0FE8100E03A68 /* HabitsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF7A49D27F0FE8100E03A68 /* HabitsStore.swift */; };
@@ -35,12 +31,8 @@
 		4BA5BC0727F341670001BE22 /* HabitDetailTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailTableViewHeader.swift; sourceTree = "<group>"; };
 		4BA5BC0927F3418D0001BE22 /* HabitDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailTableViewCell.swift; sourceTree = "<group>"; };
 		4BA5BC0B27F341B30001BE22 /* HabitDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailsViewController.swift; sourceTree = "<group>"; };
-		4BA5BC1027F347630001BE22 /* InfoViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewCell.swift; sourceTree = "<group>"; };
-		4BA5BC1227F3479C0001BE22 /* InfoViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewHeader.swift; sourceTree = "<group>"; };
 		4BF7A46327F0B5D200E03A68 /* MyHabits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyHabits.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BF7A46627F0B5D200E03A68 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4BF7A46827F0B5D200E03A68 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4BF7A46A27F0B5D200E03A68 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4BF7A46F27F0B5D300E03A68 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4BF7A47227F0B5D300E03A68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4BF7A47427F0B5D300E03A68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -78,7 +70,6 @@
 				4BA5BBFE27F33A8D0001BE22 /* HabitCollectionViewCell.swift */,
 				4BA5BBFC27F339840001BE22 /* ProgressCollectionViewCell.swift */,
 				4BA5BC0927F3418D0001BE22 /* HabitDetailTableViewCell.swift */,
-				4BA5BC1027F347630001BE22 /* InfoViewCell.swift */,
 			);
 			path = CollectionViewCells;
 			sourceTree = "<group>";
@@ -86,19 +77,9 @@
 		4B86156F27F3531E003379D3 /* TableViewHeaderFooterViews */ = {
 			isa = PBXGroup;
 			children = (
-				4BA5BC1227F3479C0001BE22 /* InfoViewHeader.swift */,
 				4BA5BC0727F341670001BE22 /* HabitDetailTableViewHeader.swift */,
 			);
 			path = TableViewHeaderFooterViews;
-			sourceTree = "<group>";
-		};
-		4BA5BBFB27F224FD0001BE22 /* Other  */ = {
-			isa = PBXGroup;
-			children = (
-				4BF7A46827F0B5D200E03A68 /* SceneDelegate.swift */,
-				4BF7A46A27F0B5D200E03A68 /* ViewController.swift */,
-			);
-			path = "Other ";
 			sourceTree = "<group>";
 		};
 		4BF7A45A27F0B5D200E03A68 = {
@@ -127,7 +108,6 @@
 				4B86156F27F3531E003379D3 /* TableViewHeaderFooterViews */,
 				4B86156E27F352D0003379D3 /* CollectionViewCells */,
 				4B86156D27F3521F003379D3 /* VievControllers */,
-				4BA5BBFB27F224FD0001BE22 /* Other  */,
 				4BF7A46F27F0B5D300E03A68 /* Assets.xcassets */,
 				4BF7A47127F0B5D300E03A68 /* LaunchScreen.storyboard */,
 				4BF7A47427F0B5D300E03A68 /* Info.plist */,
@@ -206,21 +186,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BF7A49E27F0FE8100E03A68 /* HabitsStore.swift in Sources */,
-				4BF7A46B27F0B5D200E03A68 /* ViewController.swift in Sources */,
 				4BA5BC0327F33C2E0001BE22 /* HabitCollectionViewHeader.swift in Sources */,
 				4BA5BBFF27F33A8D0001BE22 /* HabitCollectionViewCell.swift in Sources */,
-				4BA5BC1127F347630001BE22 /* InfoViewCell.swift in Sources */,
 				4BA5BC0827F341670001BE22 /* HabitDetailTableViewHeader.swift in Sources */,
 				4BF7A46727F0B5D200E03A68 /* AppDelegate.swift in Sources */,
 				4BF7A4A427F0FF5700E03A68 /* Sourse.swift in Sources */,
 				4BF7A4A027F0FED500E03A68 /* HabitsViewController.swift in Sources */,
 				4BA5BC0527F33DF10001BE22 /* HabitViewController.swift in Sources */,
 				4BF7A4A227F0FEEE00E03A68 /* InfoViewController.swift in Sources */,
-				4BA5BC1327F3479C0001BE22 /* InfoViewHeader.swift in Sources */,
 				4BA5BC0C27F341B30001BE22 /* HabitDetailsViewController.swift in Sources */,
 				4BA5BBFD27F339840001BE22 /* ProgressCollectionViewCell.swift in Sources */,
 				4BA5BC0A27F3418D0001BE22 /* HabitDetailTableViewCell.swift in Sources */,
-				4BF7A46927F0B5D200E03A68 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

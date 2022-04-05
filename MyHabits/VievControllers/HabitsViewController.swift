@@ -45,12 +45,12 @@ class HabitsViewController: UIViewController {
         view.addSubviews(HabitsViewController.collectionView)
         
         HabitsViewController.collectionView.register(ProgressCollectionViewCell.self,
-                                                     forCellWithReuseIdentifier: ProgressCollectionViewCell.identifire)
+                                                     forCellWithReuseIdentifier: ProgressCollectionViewCell.identifier)
         HabitsViewController.collectionView.register(HabitCollectionViewCell.self,
-                                                     forCellWithReuseIdentifier: HabitCollectionViewCell.identifire)
+                                                     forCellWithReuseIdentifier: HabitCollectionViewCell.identifier)
         HabitsViewController.collectionView.register(HabitCollectionViewHeader.self,
                                                      forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-                                                     withReuseIdentifier: HabitCollectionViewHeader.identifire)
+                                                     withReuseIdentifier: HabitCollectionViewHeader.identifier)
         useConstraint()
        
     }
@@ -78,12 +78,12 @@ extension HabitsViewController: UICollectionViewDataSource, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.item == 0 {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProgressCollectionViewCell.identifire,
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProgressCollectionViewCell.identifier,
                                                                 for: indexPath) as? ProgressCollectionViewCell else { return UICollectionViewCell() }
             cell.setup()
             return cell
         } else {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HabitCollectionViewCell.identifire,
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HabitCollectionViewCell.identifier,
                                                                 for: indexPath) as? HabitCollectionViewCell else { return UICollectionViewCell() }
             cell.setup(habit: HabitsStore.shared.habits[indexPath.item - 1])
             return cell
@@ -92,7 +92,7 @@ extension HabitsViewController: UICollectionViewDataSource, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         guard let cell = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
-                                                                         withReuseIdentifier: HabitCollectionViewHeader.identifire,
+                                                                         withReuseIdentifier: HabitCollectionViewHeader.identifier,
                                                                          for: indexPath) as? HabitCollectionViewHeader else { return UICollectionReusableView() }
         return cell
                 

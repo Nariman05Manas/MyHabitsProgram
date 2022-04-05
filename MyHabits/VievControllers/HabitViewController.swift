@@ -44,7 +44,7 @@ class HabitViewController: UIViewController {
         textField.toAutoLayout()
         textField.backgroundColor = .white
         textField.leftViewMode = .always
-        textField.placeholder = "Новая привычка"
+        textField.placeholder = "Бегать по утрам, спать 8 часов и т.п."
         textField.font = UIFont.systemFont(ofSize: 17, weight: .regular)
         textField.textColor = habitColor
         textField.addTarget(self, action: #selector(nameTextChanged), for: .editingChanged)
@@ -158,7 +158,6 @@ class HabitViewController: UIViewController {
     lazy var stackHeaderView: UIStackView = {
         let stackView = UIStackView()
         stackView.toAutoLayout()
-        //stackView.backgroundColor = Const.foneColor
         stackView.distribution = .fillProportionally
         stackView.axis = .horizontal
         return stackView

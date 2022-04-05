@@ -9,7 +9,7 @@ import UIKit
 
 class HabitDetailTableViewHeader: UITableViewHeaderFooterView {
 
-    static let identifire = "HabitDetailTableViewHeader"
+    static let identifier = "HabitDetailTableViewHeader"
     
     lazy var label: UILabel = {
         let label = UILabel()

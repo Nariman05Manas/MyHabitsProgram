@@ -9,7 +9,7 @@ import UIKit
 
 class ProgressCollectionViewCell: UICollectionViewCell {
     
-    static let identifire = "ProgressCollectionViewCell"
+    static let identifier = "ProgressCollectionViewCell"
     
     lazy var motivationLabel: UILabel = {
         let label = UILabel()

@@ -9,7 +9,7 @@ import UIKit
 
 class HabitDetailTableViewCell: UITableViewCell {
 
-    static let identifire = "HabitDetailTableViewCell"
+    static let identifier = "HabitDetailTableViewCell"
     
     lazy var dateLabel: UILabel = {
         let label = UILabel()

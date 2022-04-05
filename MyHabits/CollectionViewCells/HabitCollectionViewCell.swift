@@ -9,7 +9,7 @@ import UIKit
 
 class HabitCollectionViewCell: UICollectionViewCell {
     
-    static let identifire = "HabitCollectionViewCell"
+    static let identifier = "HabitCollectionViewCell"
     
     var habit: Habit?
     
